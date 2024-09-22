@@ -3,7 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>home</title>
+    <title>Donate Bangladesh</title>
+    <!-- Google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- DaisyUI CDN link -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
@@ -11,8 +18,127 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              colorPrimary: 'rgb(180, 244, 97)',
+              colorPrimaryLight: '#c3f681',
+              colorSecondary: 'rgb(249, 247, 243)',
+              colorSecondaryDark: '#c7c6c2',
+              colorText: 'rgb(17, 17, 17)',
+            },
+            fontFamily: {
+              lexend: ['Lexend', 'system-ui'],
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
+  <body class="font-lexend text-colorText">
+    <!-- Header -->
+    <header>
+      <!-- Nav Top -->
+      <div class="bg-colorSecondary">
+        <nav
+          class="navbar bg-base-100 container mx-auto py-6 bg-colorSecondary px-5"
+        >
+          <!-- Button Blog -->
+          <div class="navbar-start">
+            <button
+              class="btn btn-lg font-semibold text-xl px-8 bg-colorPrimary hover:bg-colorPrimaryLight"
+            >
+              Blog
+            </button>
+          </div>
+          <!-- Logo -->
+          <div class="navbar-center">
+            <a class="btn btn-ghost text-xl hover:bg-transparent"
+              ><img src="assets/logo.png" alt="logo" class="mr-2" /><span
+                class="hidden md:block"
+                >Donate Bangladesh</span
+              ></a
+            >
+          </div>
+          <!-- Balance -->
+          <div class="navbar-end">
+            <span class="uppercase flex items-center text-xl font-medium"
+              ><img src="assets/coin.png" alt="" /><span
+                class="balance ml-3 mr-1"
+                >5500</span
+              >bdt</span
+            >
+          </div>
+        </nav>
+      </div>
+      <!-- Donate and History -->
+      <div class="">
+        <nav class="container mx-auto flex justify-center p-5 m-5">
+          <button class="btn btn-lg px-8 bg-colorPrimary mr-5">Donate</button>
+          <button class="btn btn-lg px-8">History</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Section Donate Nowakhali -->
+    <section class="p-5">
+      <div
+        class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-10 p-8 border border-colorSecondaryDark rounded-2xl"
+      >
+        <!-- Donate Image -->
+        <img
+          class="w-full h-full object-cover rounded-xl"
+          src="assets/noakhali.png"
+          alt="Volunteering image in Nowakhali"
+        />
+        <!-- Donate Text -->
+        <div>
+          <!-- Donation Amount -->
+          <span
+            class="bg-[#1111110D] uppercase text-base gap-2 items-center inline-flex py-3 px-8 rounded-md"
+          >
+            <img src="assets/coin.png" alt="coin image" /><span
+              class="btn-donation-amount"
+              >500</span
+            >bdt
+          </span>
+          <!-- Donation Heading -->
+          <h2 class="text-xl font-bold mt-5">
+            Donate for Flood at Noakhali, Bangladesh
+          </h2>
+          <!-- Donation Paragraph -->
+          <p class="text-base leading-7 font-light mt-5">
+            The recent floods in Noakhali have caused significant damage to
+            homes infrastructure. Your donation will help provide essential
+            supplies and to those affected by this disaster. Every contribution,
+            big or small, makes difference. Please join us in supporting the
+            relief efforts and making a positive impact on the lives of those in
+            need.
+          </p>
+          <!-- Donation Input field -->
+          <form>
+            <div class="form-control">
+              <input
+                type="text"
+                placeholder="Enter Your Amount"
+                class="input input-bordered input-lg mt-5"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <button
+                class="btn btn-lg bg-colorPrimary hover:bg-colorPrimaryLight text-xl font-semibold mt-5 placeholder:font-lexend placeholder:font-light text-colorText"
+              >
+                Donate Now
+              </button>
+            </div>
+          </form>
+          <!-- Donate Now Button -->
+        </div>
+      </div>
+    </section>
     <script src="tailwind.config.js"></script>
     <script src="script.js"></script>
   </body>
