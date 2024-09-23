@@ -39,7 +39,7 @@
   </head>
   <body class="font-lexend text-colorText">
     <!-- Header -->
-    <header>
+    <header class="sticky top-0 glass">
       <!-- Nav Top -->
       <div class="bg-colorSecondary">
         <nav
@@ -47,11 +47,12 @@
         >
           <!-- Button Blog -->
           <div class="navbar-start">
-            <button
+            <a
+              href="blog.html"
               class="btn btn-lg font-semibold text-xl px-8 bg-colorPrimary hover:bg-colorPrimaryLight"
             >
               Blog
-            </button>
+            </a>
           </div>
           <!-- Logo -->
           <div class="navbar-center">
@@ -76,16 +77,18 @@
       <!-- Donate and History -->
       <div class="">
         <nav class="container mx-auto flex justify-center p-5 m-5">
-          <button class="btn btn-lg px-8 bg-colorPrimary mr-5">Donate</button>
-          <button class="btn btn-lg px-8">History</button>
+          <button class="btn btn-lg btn-donate px-8 bg-colorPrimary mr-5">
+            Donate
+          </button>
+          <button class="btn btn-lg btn-history px-8">History</button>
         </nav>
       </div>
     </header>
 
     <!-- Main -->
-    <main>
+    <main class="main">
       <!-- Section Donate Nowakhali -->
-      <section class="p-5">
+      <section class="p-5 section-donate-nowakhali" data-fund="Nowakhali">
         <div
           class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-10 p-8 border border-colorSecondaryDark rounded-2xl"
         >
@@ -102,7 +105,7 @@
               class="bg-[#1111110D] uppercase text-base gap-2 items-center inline-flex py-3 px-8 rounded-md"
             >
               <img src="assets/coin.png" alt="coin image" /><span
-                class="btn-donation-amount"
+                class="label-donation-amount"
                 >500</span
               >bdt
             </span>
@@ -131,7 +134,7 @@
               </div>
               <div class="form-control">
                 <button
-                  class="btn btn-lg bg-colorPrimary hover:bg-colorPrimaryLight text-xl font-semibold mt-8 placeholder:font-lexend placeholder:font-light text-colorText"
+                  class="btn-donate-now btn-donate-nowakhali btn btn-lg bg-colorPrimary hover:bg-colorPrimaryLight text-xl font-semibold mt-8 placeholder:font-lexend placeholder:font-light text-colorText"
                 >
                   Donate Now
                 </button>
@@ -143,7 +146,7 @@
       </section>
 
       <!-- Section Donate Feni -->
-      <section class="p-5">
+      <section class="p-5 section-donate-feni" data-fund="Feni">
         <div
           class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-10 p-8 border border-colorSecondaryDark rounded-2xl"
         >
@@ -160,7 +163,7 @@
               class="bg-[#1111110D] uppercase text-base gap-2 items-center inline-flex py-3 px-8 rounded-md"
             >
               <img src="assets/coin.png" alt="coin image" /><span
-                class="btn-donation-amount"
+                class="label-donation-amount"
                 >1100</span
               >bdt
             </span>
@@ -191,7 +194,7 @@
               </div>
               <div class="form-control">
                 <button
-                  class="btn btn-lg bg-colorPrimary hover:bg-colorPrimaryLight text-xl font-semibold mt-8 placeholder:font-lexend placeholder:font-light text-colorText"
+                  class="btn-donate-now btn-donate-feni btn btn-lg bg-colorPrimary hover:bg-colorPrimaryLight text-xl font-semibold mt-8 placeholder:font-lexend placeholder:font-light text-colorText"
                 >
                   Donate Now
                 </button>
@@ -203,7 +206,7 @@
       </section>
 
       <!-- Section Donate For Quota Movement -->
-      <section class="p-5">
+      <section class="p-5 section-donate-quota" data-fund="Quota Movement">
         <div
           class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-10 p-8 border border-colorSecondaryDark rounded-2xl"
         >
@@ -220,12 +223,12 @@
               class="bg-[#1111110D] uppercase text-base gap-2 items-center inline-flex py-3 px-8 rounded-md"
             >
               <img src="assets/coin.png" alt="coin image" /><span
-                class="btn-donation-amount"
+                class="label-donation-amount"
                 >700</span
               >bdt
             </span>
             <!-- Donation Heading -->
-            <h2 class="text-xl font-bold mt-8">
+            <h2 class="text-xl font-bold mt-8 title">
               Aid for Injured in the Quota Movement
             </h2>
             <!-- Donation Paragraph -->
@@ -252,7 +255,7 @@
               </div>
               <div class="form-control">
                 <button
-                  class="btn btn-lg bg-colorPrimary hover:bg-colorPrimaryLight text-xl font-semibold mt-8 placeholder:font-lexend placeholder:font-light text-colorText"
+                  class="btn-donate-now btn-donate-movement btn btn-lg bg-colorPrimary hover:bg-colorPrimaryLight text-xl font-semibold mt-8 placeholder:font-lexend placeholder:font-light text-colorText"
                 >
                   Donate Now
                 </button>
@@ -265,23 +268,41 @@
     </main>
 
     <!-- Section History -->
-    <section class="section-history p-5">
+    <section class="section-history p-5 hidden">
       <!-- Donation history list container -->
-      <div
-        class="donation-history-list container mx-auto p-8 border border-colorSecondaryDark rounded-2xl"
-      >
+      <div class="donation-history-list container mx-auto">
         <!-- Donation History item -->
-        <div class="donation-history">
+        <!-- <div
+          class="donation-history p-8 border border-colorSecondaryDark rounded-2xl mb-5"
+        >
           <p class="text-xl font-bold leading-7 mb-5">
             96500 Taka is Donated for famine-2024 at Feni, Bangladesh
           </p>
           <p class="text-base font-light leading-7">
             Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)
           </p>
-        </div>
+        </div> -->
       </div>
     </section>
+
+    <!-- Modal -->
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box text-center">
+        <h3 class="text-3xl font-bold">Congrats!</h3>
+        <div class="flex justify-center mt-5">
+          <img class="" src="assets/coin.png" alt="coin image" />
+        </div>
+        <p class="py-4 capitalize">You have donated for humankind</p>
+        <p class="py-4 capitalize text-2xl font-bold">successfully</p>
+        <div class="modal-action flex justify-center">
+          <form class="modal-form" method="dialog ">
+            <button class="btn">Close Confirmation</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
     <script src="tailwind.config.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
+<!-- onclick="my_modal_5.showModal()" -->
