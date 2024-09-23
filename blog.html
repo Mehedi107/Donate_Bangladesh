@@ -189,5 +189,14 @@
         </div>
       </section>
     </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const storedBalance = localStorage.getItem('currentBalance');
+
+        if (storedBalance)
+          document.querySelector('.balance').textContent = storedBalance;
+      });
+    </script>
   </body>
 </html>
