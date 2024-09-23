@@ -49,14 +49,14 @@
           <div class="navbar-start">
             <a
               href="index.html"
-              class="btn sm:btn-lg font-semibold text-xl bg-colorPrimary hover:bg-colorPrimaryLight"
+              class="btn sm:btn-lg font-semibold text-base md:text-xl bg-colorPrimary hover:bg-colorPrimaryLight"
             >
               Home
             </a>
           </div>
           <!-- Logo -->
           <div class="navbar-center">
-            <a class="btn btn-ghost text-xl hover:bg-transparent"
+            <a class="text-xl"
               ><img src="assets/logo.png" alt="logo" class="mr-2" /><span
                 class="hidden md:block"
                 >Donate Bangladesh</span
@@ -65,7 +65,7 @@
           </div>
           <!-- Balance -->
           <div class="navbar-end">
-            <span class="uppercase flex items-center text-xl font-medium"
+            <span class="uppercase flex items-center text-base md:text-xl font-medium"
               ><img src="assets/coin.png" alt="" /><span
                 class="balance ml-3 mr-1"
                 >5500</span
@@ -78,7 +78,7 @@
     <!-- main -->
     <main>
       <section class="container mx-auto p-5">
-        <h2 class="flex text-4xl font-bold mt-8">
+        <h2 class="flex text-3xl md:text-4xl font-bold mt-8">
           Important FAQ
           <span class="ml-3"
             ><svg
@@ -189,14 +189,5 @@
         </div>
       </section>
     </main>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const storedBalance = localStorage.getItem('currentBalance');
-
-        if (storedBalance)
-          document.querySelector('.balance').textContent = storedBalance;
-      });
-    </script>
   </body>
 </html>
