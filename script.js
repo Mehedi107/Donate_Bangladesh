@@ -65,9 +65,6 @@ mainContainer.addEventListener('click', function (e) {
       balance.textContent =
         Number(balance.textContent) - Number(inputAmount.value);
 
-      // Save balance date to locale storage
-      localStorage.setItem('currentBalance', balance.textContent);
-
       showModal();
 
       const currentDate = new Date();
