@@ -2,6 +2,7 @@
 // Elements
 const balance = document.querySelector('.balance');
 const mainContainer = document.querySelector('.main');
+const sectionHistory = document.querySelector('.section-history');
 const btnDonate = document.querySelector('.btn-donate');
 const btnHistory = document.querySelector('.btn-history');
 const historyListContainer = document.querySelector('.donation-history-list');
@@ -16,22 +17,29 @@ const clearInputField = (input) => {
 
 const showModal = () => {
   my_modal_5.showModal();
+
   modal.addEventListener('submit', (e) => {
     e.preventDefault();
-    document.getElementById('my_modal_5').close();
+    my_modal_5.close();
   });
 };
 
 /////////////////////////////////////////////////
 // Event handler
 btnDonate.addEventListener('click', function () {
-  document.querySelector('.main').classList.remove('hidden');
-  document.querySelector('.section-history').classList.add('hidden');
+  mainContainer.classList.remove('hidden');
+  sectionHistory.classList.add('hidden');
+
+  btnDonate.style.backgroundColor = 'rgb(180, 244, 97)';
+  btnHistory.style.backgroundColor = '#F3F3F3';
 });
 
 btnHistory.addEventListener('click', function () {
-  document.querySelector('.main').classList.add('hidden');
-  document.querySelector('.section-history').classList.remove('hidden');
+  mainContainer.classList.add('hidden');
+  sectionHistory.classList.remove('hidden');
+
+  btnDonate.style.backgroundColor = '#F3F3F3';
+  btnHistory.style.backgroundColor = 'rgb(180, 244, 97)';
 });
 
 mainContainer.addEventListener('click', function (e) {
@@ -71,7 +79,7 @@ mainContainer.addEventListener('click', function (e) {
 
       const historyItem = `
         <div
-          class="donation-history p-8 border border-colorSecondaryDark rounded-2xl mb-5"
+          class="donation-history p-5 md:p-8 border border-colorSecondaryDark rounded-2xl mb-5"
         >
           <p class="text-xl font-bold leading-7 mb-5">
             ${Number(
